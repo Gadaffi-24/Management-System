@@ -8,7 +8,7 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
-
+    <!-- comment -->
     <EditText
         android:id="@+id/textView3"
         android:layout_width="308dp"
@@ -19,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+    <!-- View all Playlists -->
     <Button
         android:id="@+id/button"
         android:layout_width="225dp"
@@ -29,6 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
+    <!-- musical note image -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="158dp"
@@ -39,6 +41,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/musicalnote" />
 
+    <!-- To add playlists -->
     <Button
         android:id="@+id/button2"
         android:layout_width="224dp"
@@ -49,6 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <!-- Names of artists -->
     <EditText
         android:id="@+id/textView"
         android:layout_width="306dp"
@@ -59,6 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/songnames" />
 
+    <!-- Song titles-->
     <EditText
         android:id="@+id/songnames"
         android:layout_width="301dp"
@@ -69,6 +74,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <!-- Ratings -->
     <EditText
         android:id="@+id/textView2"
         android:layout_width="308dp"
@@ -79,6 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <!-- Exit button -->
     <Button
         android:id="@+id/button3"
         android:layout_width="226dp"

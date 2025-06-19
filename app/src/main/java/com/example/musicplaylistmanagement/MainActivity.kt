@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnExit: Button
 
     // Parallel arrays to store playlist data
-    private var titles = arrayListOf<String>()
-    private var artists = arrayListOf<String>()
+    private var titles = arrayListOf("Warning","Motliseni Patleni","Dear Mama","Kumnandi")
+    private var artists = arrayListOf("Shandesh","Shebe","Kaycherlow","Sam Deep")
     private var ratings = arrayListOf<Int>()
     private var comments = arrayListOf<String>()
 

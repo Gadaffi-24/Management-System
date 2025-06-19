@@ -7,6 +7,7 @@
     tools:context=".ViewScreen"
     android:background="@drawable/background">
 
+    <!-- Playlist details -->
     <TextView
     android:id="@+id/tvScreenTitle"
     android:layout_width="wrap_content"
@@ -19,6 +20,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Button for displaying all songs -->
     <Button
         android:id="@+id/BtnDisplaylist"
         android:layout_width="0dp"
@@ -31,6 +33,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btnAverage"
         app:layout_constraintTop_toBottomOf="@+id/tvScreenTitle" />
 
+    <!-- Calculates average button -->
     <Button
         android:id="@+id/btnAverage"
         android:layout_width="0dp"
@@ -43,6 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvScreenTitle" />
 
+    <!-- Displays playlists -->
     <TextView
         android:id="@+id/textlist"
         android:layout_width="0dp"
@@ -54,13 +58,14 @@
         android:scrollbars="vertical"
         android:textStyle="normal"
         android:textSize="16sp"
-        android:textColor="@android:color/black"
+        android:textColor="#580BE2"
         app:layout_constraintTop_toBottomOf="@+id/BtnDisplaylist"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/textAverage"
         tools:text="Song 1: Title\nArtist: Name\nRating: 5\nComments: Great song!\n\nSong 2: Title2..." />
 
+    <!-- Displays Average -->
     <TextView
         android:id="@+id/textAverage"
         android:layout_width="wrap_content"
@@ -73,6 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Average Rating: 4.50" />
 
+    <!-- Back to main button -->
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
