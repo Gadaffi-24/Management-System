@@ -23,41 +23,43 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4 # Action to check out your repository under $GITHUB_WORKSPACE
+    - name: Checkout Code
+      uses: actions/checkout@v4 # Action to check out your repository under $GITHUB_WORKSPACE
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4 # Action to set up Java Development Kit
-        with:
-          distribution: 'temurin' # Recommended distribution for OpenJDK
-          java-version: '17'      # Specify Java 17, common for modern Android development
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4 # Action to set up Java Development Kit
+      with:
+        distribution: 'temurin' # Recommended distribution for OpenJDK
+        java-version: '17'      # Specify Java 17, common for modern Android development
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3 # Action to install necessary Android SDK components
-        with:
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@v3 # Action to install necessary Android SDK components
+      with:
         # You can specify SDK components if needed, e.g., 'platform-tools', 'platforms;android-34'
         # For a basic build, this action usually sets up enough by default.
+        # Uncomment and set specific versions if your project requires them:
         # sdk-tools: 'latest'
-        # build-tools: '34.0.0' # Match your project's compileSdk if necessary
+        # build-tools: '34.0.0' # Example: Match your project's buildToolsVersion in app/build.gradle
+        # platforms: 'android-34' # Example: Match your project's compileSdk in app/build.gradle
 
-      - name: Grant execute permissions to gradlew
-        run: chmod +x gradlew # Make the Gradle wrapper executable
+    - name: Grant execute permissions to gradlew
+      run: chmod +x gradlew # Make the Gradle wrapper executable
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug # Command to build the debug APK
-        # You can add --stacktrace --info for more detailed logging if needed
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug # Command to build the debug APK
+      # You can add --stacktrace --info for more detailed logging if needed
 
-      - name: Run Unit Tests
-        run: ./gradlew testDebugUnitTest # Command to run unit tests
-        # This runs tests in app/src/test/java
+    - name: Run Unit Tests
+      run: ./gradlew testDebugUnitTest # Command to run unit tests
+      # This runs tests in app/src/test/java
 
-      # Optional: Upload APK artifact (useful for deploying or downloading the build)
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
-          # If you have multiple product flavors, adjust the path accordingly (e.g., app/build/outputs/apk/flavorName/app-flavorName-debug.apk)
+    # Optional: Upload APK artifact (useful for deploying or downloading the build)
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: debug-apk
+        path: app/build/outputs/apk/debug/app-debug.apk
+        # If you have multiple product flavors, adjust the path accordingly (e.g., app/build/outputs/apk/flavorName/app-flavorName-debug.apk)
 
     # Optional: Upload test reports artifact (useful for reviewing test results)
     # - name: Upload Unit Test Results
