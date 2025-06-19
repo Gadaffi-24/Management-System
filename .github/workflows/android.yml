@@ -37,8 +37,10 @@ jobs:
         with:
         # You can specify SDK components if needed, e.g., 'platform-tools', 'platforms;android-34'
         # For a basic build, this action usually sets up enough by default.
+        # Uncomment and set specific versions if your project requires them:
         # sdk-tools: 'latest'
-        # build-tools: '34.0.0' # Match your project's compileSdk if necessary
+        # build-tools: '34.0.0' # Example: Match your project's buildToolsVersion in app/build.gradle
+        # platforms: 'android-34' # Example: Match your project's compileSdk in app/build.gradle
 
       - name: Grant execute permissions to gradlew
         run: chmod +x gradlew # Make the Gradle wrapper executable
